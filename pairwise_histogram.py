@@ -1,5 +1,3 @@
-"""Show histogram data with statistical test"""
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -7,7 +5,7 @@ import numpy as np
 # plt.style.use('sparkle.mplstyle') 
 
 # == Input (replace mock data)
-names = ['root', 'shoot', 'leaf']
+names = ['root', 'leaf', 'flower']
 
 exp_name = r'$\Delta$something'
 experim = [10, 11.0, 9.0]
@@ -24,9 +22,8 @@ ylabel = r'Conductivity $R$ ($\mu \Omega$)'
 
 path = 'exports/example.pdf'  # or None. Make sure the folder exists
 
-
-# Styling parameters
-FIGSIZE = (6, 4)
+# == Styling parameters
+FIGSIZE = (6, 4)  # inches
 MARGINS = dict(
     left=0.6/FIGSIZE[0], 
     bottom=0.5/FIGSIZE[1],
@@ -52,7 +49,6 @@ LEGEND = dict(
 TEXT_OFFSET_Y = 0.02  # > 0
 SPACE_ABOVE_BARS = 1.2  # > 1
 
-
 def p_symbol(p, s='✶'):
     if p <= 0.001: return s*3
     if p <= 0.01:  return s*2
@@ -72,7 +68,6 @@ if True:
     xlim = [BAR_PLOT.get('width', 1), 2 + 2*num_bars - BAR_PLOT.get('width', 1)]
     x_vals = 2 * np.arange(1, num_bars+1)
     dx = BAR_PLOT.get('width', 1)/2
-
 
 # Plotting
 if True:
