@@ -3,10 +3,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# == Input data
+# Uncomment line below to override default theme
+# plt.style.use('sparkle.mplstyle') 
+
+# == Input (replace mock data)
 names = ['root', 'shoot', 'leaf']
 
-exp_name = r'$\Delta$domain'
+exp_name = r'$\Delta$something'
 experim = [10, 11.0, 9.0]
 err_exp = [0.4, 0.3, 0.3]  # or None
 
@@ -36,10 +39,10 @@ BAR_PLOT = dict(
     width=0.8,  # 0.0 - 1.0
     )
 CTL_BAR = {**BAR_PLOT, **dict(
-    facecolor="#c7c7c7",  # Your favourite colors here
+    facecolor="#d7d7d7",  # Your favourite colors here
 )}
 EXP_BAR = {**BAR_PLOT, **dict(
-    facecolor="#4742e0",  # Your favourite colors here
+    # facecolor="#4742e0",  # Your favourite colors here
     )}
 LEGEND = dict(
     edgecolor='none',
@@ -56,7 +59,7 @@ def p_symbol(p, s='✶'):
     if p <= 0.05:  return s*1
     return '$ns$'
 
-
+# Compute axis dimensions
 if True:
     # Y dimensions
     num_bars = len(experim)
@@ -74,8 +77,8 @@ if True:
 # Plotting
 if True:
     plt.figure(figsize=FIGSIZE)
-    plt.bar(x_vals-dx, control, yerr=err_ctl, label=ctl_name, **CTL_BAR)
     plt.bar(x_vals+dx, experim, yerr=err_exp, label=exp_name, **EXP_BAR)
+    plt.bar(x_vals-dx, control, yerr=err_ctl, label=ctl_name, **CTL_BAR)
     if p_value is not None:
         for px, py, pval in zip(x_vals, heights, p_value):
             plt.text(px, py+text_offset, p_symbol(pval), ha='center', va='center')
