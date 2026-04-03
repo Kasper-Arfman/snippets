@@ -20,7 +20,7 @@ p_value = [0.0001, 0.013, 0.8] # or None
 xlabel = 'Tissue type' # or None
 ylabel = r'Conductivity $R$ ($\mu \Omega$)'
 
-path = 'exports/example.pdf'  # or None. Make sure the folder exists
+path = 'exports/pairwise_histogram.pdf'  # or None. Make sure the folder exists
 
 # == Styling parameters
 FIGSIZE = (6, 4)  # inches

@@ -7,7 +7,7 @@ import numpy as np
 # == Input (replace mock data)
 x = np.linspace(1, 20, 500)
 y = x**(-1/2)
-dy = np.random.normal(0.2, 0.1, 500) / x
+dy = np.random.normal(0.1, 0.1, 500) / x
 
 label = 'Cats'
 xlabel = '$t$ ($h$)' # or None
@@ -15,7 +15,7 @@ ylabel = r'IQ ($\mu \Omega$)'
 path = 'exports/shaded_error_plot.pdf'  # or None. Make sure the folder exists
 
 # == Styling
-FIGSIZE = (4, 3)  # inches
+FIGSIZE = (3, 2)  # inches
 MARGINS = dict(
     left=0.7/FIGSIZE[0], 
     bottom=0.5/FIGSIZE[1],
